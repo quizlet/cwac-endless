@@ -3,13 +3,11 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.7.+'
-        classpath 'com.github.dcendents:android-maven-plugin:1.0'
+        classpath 'com.android.tools.build:gradle:1.0.0'
     }
 }
 
 apply plugin: 'android-library'
-apply plugin: 'android-maven'
 
 version '1.2.3'
 group 'com.commonsware.cwac'
@@ -22,12 +20,11 @@ repositories {
 
 dependencies {
     compile 'com.commonsware.cwac:adapter:1.0.+'
-    compile fileTree(dir: 'libs', include: '*.jar')
 }
 
 android {
-    compileSdkVersion 17
-    buildToolsVersion "18.1.0"
+    compileSdkVersion 21
+    buildToolsVersion '21.1.0'
 
     sourceSets {
         main {
@@ -43,17 +40,4 @@ android {
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
     }
-}
-
-// from http://stackoverflow.com/a/19484146/115145
-
-android.libraryVariants.all { variant ->
-  def name = variant.buildType.name
-  if (name.equals(com.android.builder.BuilderConstants.DEBUG)) {
-    return; // Skip debug builds.
-  }
-  def task = project.tasks.create "jar${name.capitalize()}", Jar
-  task.dependsOn variant.javaCompile
-  task.from variant.javaCompile.destinationDir
-  // artifacts.add('archives', task);
 }
