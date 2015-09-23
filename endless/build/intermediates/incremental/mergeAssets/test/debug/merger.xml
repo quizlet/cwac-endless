@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="1.0.3"><source path="/opt/projects/quizlet-android/cwac-endless/endless/build/intermediates/exploded-aar/com.commonsware.cwac/adapter/1.0.3/assets"/></dataSet><dataSet config="debug"><source path="/opt/projects/quizlet-android/cwac-endless/endless/build/intermediates/bundles/debug/assets"/></dataSet><dataSet config="main"><source path="/opt/projects/quizlet-android/cwac-endless/endless/src/androidTest/assets"/></dataSet></merger>
