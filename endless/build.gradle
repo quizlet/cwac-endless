@@ -1,13 +1,13 @@
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$rootProject.ext.androidGradlePlugin"
     }
 }
 
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 
 version '1.2.3'
 group 'com.commonsware.cwac'
@@ -24,7 +24,7 @@ dependencies {
 
 android {
     compileSdkVersion 21
-    buildToolsVersion '23.0.2'
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     sourceSets {
         main {
